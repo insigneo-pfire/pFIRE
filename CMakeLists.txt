@@ -14,6 +14,7 @@
 #   limitations under the License.
 
 cmake_minimum_required(VERSION 3.7.0)
+cmake_policy(SET CMP0074 NEW)
 project(pFIRE)
 
 if("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
