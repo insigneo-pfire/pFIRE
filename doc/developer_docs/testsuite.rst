@@ -36,6 +36,7 @@ later, either using pip or by manually running the provided setup.py:
 alternatively you can use Python virtualenv
 
 .. code-block:: console
+
   $ cd benchmarking
   # then
   # create and activate Virtual env
