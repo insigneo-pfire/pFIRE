@@ -33,6 +33,19 @@ later, either using pip or by manually running the provided setup.py:
   #or
   $ python3 setup.py
 
+alternatively you can use Python virtualenv
+
+.. code-block:: console
+  $ cd benchmarking
+  # then
+  # create and activate Virtual env
+  $ python3 -m venv venv-py36
+  $ source venv-py3/bin/activate
+  $ pip install -r requirements.txt 
+  $ python3 setup.py
+  # then add directory to PYTHONPATH
+  $ export PYTHONPATH=$PYTHONPATH:`pwd`
+
 The test suite is dependent on several common python packages. If using pip these should be
 installed for you automatically.  If installing manually it is up to you to install them.
 
