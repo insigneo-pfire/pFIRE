@@ -109,14 +109,14 @@ endif(ENABLE_DCMTK)
 
 if(DCMTK_FOUND)
 	message("DCMTK found")
-	#include_directories(${DCMTK_INCLUDES})
+	include_directories(${DCMTK_INCLUDES})
 	# FIX the following line to work with DCMTK not in single library
-	# set(EXTRA_LIBS ${EXTRA_LIBS} ${DCMTK_CMAKE_INSTALL_PREFIX}/lib64/libdcmtk.so )#${DCMTK_CMAKE_INSTALL_PREFIX}/${DCMTK_LIBRARIES})
-    # set(EXTRA_LIBS ${EXTRA_LIBS} ${DCMTK_CMAKE_INSTALL_PREFIX}/${DCMTK_LIBRARIES})
+	 # set(EXTRA_LIBS ${EXTRA_LIBS} ${DCMTK_CMAKE_INSTALL_PREFIX}/lib64/libdcmtk.so )#${DCMTK_CMAKE_INSTALL_PREFIX}/${DCMTK_LIBRARIES})
+     set(EXTRA_LIBS ${EXTRA_LIBS} ${DCMTK_CMAKE_INSTALL_PREFIX}/${DCMTK_LIBRARIES})
 	add_definitions(-DUSE_DCMTK)
-	#include_directories(${DCMTK_INCLUDE_DIRS})
-	#cmake_print_variables(DCMTK_INCLUDES)  
-	#cmake_print_variables(DCMTK_LIBRARIES)
+	include_directories(${DCMTK_INCLUDE_DIRS})
+	cmake_print_variables(DCMTK_INCLUDES)  
+	cmake_print_variables(DCMTK_LIBRARIES)
 	#cmake_print_variables(DCMTK_CMAKE_INSTALL_PREFIX)
 	
 
@@ -139,8 +139,10 @@ if(OpenImageIO_FOUND AND ENABLE_OpenImageIO)
 	cmake_print_variables(OpenImageIO_LIBRARIES)
 	#cmake_print_variables(OpenImageIO_LIB_DIR)
 	# OpenImageIO cmake config is missing library names so declaring here until they fix it
-#try modern	set (OpenImageIO_LIBRARIES "${OpenImageIO_LIB_DIR}/libOpenImageIO_Util.so;${OpenImageIO_LIB_DIR}/libOpenImageIO.so")
-#try modern	include_directories(${OpenImageIO_INCLUDE_DIR})
+#try modern	
+set (OpenImageIO_LIBRARIES "${OpenImageIO_LIB_DIR}/libOpenImageIO_Util.so;${OpenImageIO_LIB_DIR}/libOpenImageIO.so")
+#try modern	
+include_directories(${OpenImageIO_INCLUDE_DIR})
 	cmake_print_variables(OpenImageIO_LIBRARIES)
 	#set(EXTRA_LIBS ${EXTRA_LIBS} ${OpenImageIO_LIBRARIES} )
 	#add_definitions(-DUSE_OIIO)

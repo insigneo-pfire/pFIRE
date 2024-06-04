@@ -39,12 +39,13 @@ add_library(pfire_lib SHARED  ${pfire_libSOURCES} )
 
 #set_target_properties(pfire_lib PROPERTIES PREFIX "")
 #target_link_libraries(pfire_lib ${EXTRA_LIBS} ) # ${DCMTK_LIBRARIES})
-target_link_libraries(pfire_lib PUBLIC ${EXTRA_LIBS})
-target_link_libraries(pfire_lib PUBLIC OpenImageIO::OpenImageIO )#${OpenImageIO_LIBRARIES})
-target_link_libraries(pfire_lib PUBLIC DCMTK::dcmtk)
+#target_link_libraries(pfire_lib PUBLIC ${EXTRA_LIBS})
+#target_link_libraries(pfire_lib PUBLIC OpenImageIO::OpenImageIO )#${OpenImageIO_LIBRARIES})
+#target_link_libraries(pfire_lib PUBLIC OpenImageIO::OpenImageIO DCMTK::dcmtk ) #${OpenImageIO_LIBRARIES})
+#target_link_libraries(pfire_lib PUBLIC DCMTK::dcmtk)
 # alternative approach based on modern CMAKE
-#target_link_libraries(pfire_lib ${DCMTK_LIBRARIES})
-
+#target_link_libraries(pfire_lib ${DCMTK_LIBRARIES} ${OpenImageIO_LIBRARIES})
+target_link_libraries(pfire_lib DCMTK::DCMTK ${OpenImageIO_LIBRARIES} ${Boost_LIBRARIES} ${MPI_LIBRARIES} ${PETSC_LIBRARIES} ${HDF5_LIBRARIES})
 
 
 add_executable(pfire pfire.cpp)
