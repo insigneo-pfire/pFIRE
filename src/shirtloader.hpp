@@ -16,6 +16,7 @@
 #ifndef SHIRTLOADER_HPP
 #define SHIRTLOADER_HPP
 
+#include<algorithm>
 #include "baseloader.hpp"
 #include "types.hpp"
 
